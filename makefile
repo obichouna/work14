@@ -5,4 +5,7 @@ clean:
 	rm a.out
 	rm semaphores
 run: all
-	./semaphores
+	./semaphores -c 4
+	./semaphores -c 3
+	./semaphores -v
+	./semaphores -r

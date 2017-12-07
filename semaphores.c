@@ -17,14 +17,14 @@ int main(int argc, char * argv[]){
       if(sem = semget(KEY, 1, IPC_EXCL | IPC_CREAT | 0664) != -1){
           sem = semget(KEY, 0, 0);
           int x;
-          sscanf(args[2], %d, &x);
+          sscanf(argv[2], "%d", &x);
           semctl(sem, 0, SETVAL, x);
           printf("semaphore created: %d\n", sem);
       }else{
       printf("semaphore already exists\n");
-    }else{
-      printf("Incorrect input\n");
-      }
+      }//else{
+	// printf("Incorrect input\n");
+      //}
     }
   }else if(!strcmp(argv[1], "-v") && argc == 2){
     sem = semget(KEY, 0, 0);
